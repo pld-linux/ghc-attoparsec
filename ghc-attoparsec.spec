@@ -2,7 +2,7 @@
 Summary:	Fast combinator parsing for bytestrings
 Name:		ghc-%{pkgname}
 Version:	0.10.2.0
-Release:	2
+Release:	3
 License:	BSD3
 Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/%{pkgname}/%{version}/%{pkgname}-%{version}.tar.gz
@@ -78,7 +78,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc NEWS
 %doc %{name}-%{version}-doc/*
 %{_libdir}/%{ghcdir}/package.conf.d/%{pkgname}.conf
 %dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}
