@@ -2,7 +2,7 @@
 Summary:	Fast combinator parsing for bytestrings
 Name:		ghc-%{pkgname}
 Version:	0.10.2.0
-Release:	0.1
+Release:	1
 License:	BSD3
 Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/%{pkgname}/%{version}/%{pkgname}-%{version}.tar.gz
@@ -85,10 +85,22 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/*.a
 %exclude %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/*_p.a
 
-%dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/PACKAGE
-%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/PACKAGE/*.hi
+%dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/*.hi
+%dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/Attoparsec
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/Attoparsec/*.hi
+%dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/Attoparsec/ByteString
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/Attoparsec/ByteString/*.hi
+%dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/Attoparsec/Internal
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/Attoparsec/Internal/*.hi
+%dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/Attoparsec/Text
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/Attoparsec/Text/*.hi
 
 %files prof
 %defattr(644,root,root,755)
 %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/*_p.a
-%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/PACKAGE/*.p_hi
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/*.p_hi
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/Attoparsec/*.p_hi
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/Attoparsec/ByteString/*.p_hi
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/Attoparsec/Internal/*.p_hi
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/Attoparsec/Text/*.p_hi
