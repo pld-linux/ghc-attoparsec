@@ -21,6 +21,7 @@ BuildRequires:	ghc-text >= 0.11.1.5
 BuildRequires:	rpmbuild(macros) >= 1.608
 %requires_releq	ghc
 Requires(post,postun):	/usr/bin/ghc-pkg
+Requires:	ghc-text >= 0.11.1.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # debuginfo is not useful for ghc
@@ -44,6 +45,7 @@ Summary:	Profiling %{pkgname} library for GHC
 Summary(pl.UTF-8):	Biblioteka profilująca %{pkgname} dla GHC
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	ghc-text-prof >= 0.11.1.5
 
 %description prof
 Profiling %{pkgname} library for GHC. Should be installed when
