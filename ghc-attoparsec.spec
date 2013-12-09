@@ -15,7 +15,7 @@ Source0:	http://hackage.haskell.org/package/%{pkgname}-%{version}/%{pkgname}-%{v
 # Source0-md5:	2b9ec5768797e8c649bf36efa9ef97e2
 URL:		http://hackage.haskell.org/package/attoparsec
 BuildRequires:	ghc >= 6.12.3
-%{?with_prof:BuildRequires:	ghc-prof}
+%{?with_prof:BuildRequires:	ghc-prof >= 6.12.3}
 BuildRequires:	ghc-text >= 0.11.1.5
 %{?with_prof:BuildRequires:	ghc-text-prof >= 0.11.1.5}
 BuildRequires:	rpmbuild(macros) >= 1.608
