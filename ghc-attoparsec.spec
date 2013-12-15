@@ -15,19 +15,39 @@ Source0:	http://hackage.haskell.org/package/%{pkgname}-%{version}/%{pkgname}-%{v
 # Source0-md5:	2b9ec5768797e8c649bf36efa9ef97e2
 URL:		http://hackage.haskell.org/package/attoparsec
 BuildRequires:	ghc >= 6.12.3
-%{?with_prof:BuildRequires:	ghc-prof >= 6.12.3}
+BuildRequires:	ghc-array
+BuildRequires:	ghc-base >= 3
+BuildRequires:	ghc-base < 5
+BuildRequires:	ghc-bytestring
+BuildRequires:	ghc-containers
+BuildRequires:	ghc-deepseq
 BuildRequires:	ghc-text >= 0.11.1.5
-%{?with_prof:BuildRequires:	ghc-text-prof >= 0.11.1.5}
+%if %{with prof}
+BuildRequires:	ghc-prof >= 6.12.3
+BuildRequires:	ghc-array-prof
+BuildRequires:	ghc-base-prof >= 3
+BuildRequires:	ghc-base-prof < 5
+BuildRequires:	ghc-bytestring-prof
+BuildRequires:	ghc-containers-prof
+BuildRequires:	ghc-deepseq-prof
+BuildRequires:	ghc-text-prof >= 0.11.1.5
+%endif
 BuildRequires:	rpmbuild(macros) >= 1.608
 %requires_releq	ghc
 Requires(post,postun):	/usr/bin/ghc-pkg
+Requires:	ghc-array
+Requires:	ghc-base >= 3
+Requires:	ghc-base < 5
+Requires:	ghc-bytestring
+Requires:	ghc-containers
+Requires:	ghc-deepseq
 Requires:	ghc-text >= 0.11.1.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # debuginfo is not useful for ghc
 %define		_enable_debug_packages	0
 
-# don't compress haddoc files
+# don't compress haddock files
 %define		_noautocompressdoc	*.haddock
 
 %description
@@ -45,6 +65,12 @@ Summary:	Profiling %{pkgname} library for GHC
 Summary(pl.UTF-8):	Biblioteka profilująca %{pkgname} dla GHC
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	ghc-array-prof
+Requires:	ghc-base-prof >= 3
+Requires:	ghc-base-prof < 5
+Requires:	ghc-bytestring-prof
+Requires:	ghc-containers-prof
+Requires:	ghc-deepseq-prof
 Requires:	ghc-text-prof >= 0.11.1.5
 
 %description prof
