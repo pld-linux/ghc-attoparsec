@@ -33,7 +33,7 @@ BuildRequires:	ghc-deepseq-prof
 BuildRequires:	ghc-text-prof >= 0.11.1.5
 %endif
 BuildRequires:	rpmbuild(macros) >= 1.608
-%requires_releq	ghc
+%requires_eq	ghc
 Requires(post,postun):	/usr/bin/ghc-pkg
 Requires:	ghc-array
 Requires:	ghc-base >= 3
