@@ -7,7 +7,7 @@ Summary:	Fast combinator parsing for bytestrings
 Summary(pl.UTF-8):	Szybki kombinator analizujący łańcuchy bajtów
 Name:		ghc-%{pkgname}
 Version:	0.13.2.4
-Release:	1
+Release:	2
 License:	BSD
 Group:		Development/Languages
 #Source0Download: http://hackage.haskell.org/package/attoparsec
